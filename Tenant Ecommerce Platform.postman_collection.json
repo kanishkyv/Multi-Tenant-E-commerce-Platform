@@ -1,0 +1,621 @@
+{
+	"info": {
+		"_postman_id": "37144447-a43c-474b-ab19-64fb994c8823",
+		"name": "Tenant Ecommerce Platform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"admin3@yopmail.com\",\n    \"password\":\"12345678\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/admin/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"admin",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"admin3@yopmail.com\",\n    \"password\":\"12345678\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add tenant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWViZjQzNGMwYmU4MjdiOGUzMzI1ZCIsImlhdCI6MTcxNzQ4NTczMywiZXhwIjoxNzIwMDc3NzMzfQ.4Y2iDNx89iWPEOm1S46qKG6950gpCJiUKo22Cd5zUaM",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"tenant1@yopmail.com\",\n    \"password\":\"12345678\",\n    \"name\":\"Tenant 1\",\n    \"latitude\":\"0.001\",\n    \"longitude\":\"0.201\",\n    \"radius\": 10\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/admin/tenant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"admin",
+								"tenant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update tenant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"tenant1@yopmail.com\",\n    \"password\":\"12345678\",\n    \"name\":\"Tenant 1 updated\",\n    \"latitude\":\"0.002\",\n    \"longitude\":\"0.201\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/admin/tenant/665a45529fa06d39133346d4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"admin",
+								"tenant",
+								"665a45529fa06d39133346d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete tenant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2000/api/admin/tenant/665a3f76d4f3f77fb5bf5521",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"admin",
+								"tenant",
+								"665a3f76d4f3f77fb5bf5521"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"admin@yopmail.com\",\n    \"password\":\"12345678\",\n    \"name\":\"Rahul\",\n    \"latitude\":\"0.001\",\n    \"longitude\":\"0.0002\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/customer/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"customer",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addToCart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWVjNjY2YmMxM2E1ODRlMzAxYzU4OSIsImlhdCI6MTcxNzQ4NzQ3NiwiZXhwIjoxNzIwMDc5NDc2fQ.dJIN9WU-5Yzi8kBPinSG4EPpNvjicDdYtq92YAj3vPY",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"tenantId\":\"665ec2cf0b0374bbd22fa741\",\n   \"products\":[{\n       \"productId\":\"657ec5590a452b73d45815cd\",\n       \"qty\":2,\n       \"price\": 1150\n   }]\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/customer/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"customer",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWVjNjY2YmMxM2E1ODRlMzAxYzU4OSIsImlhdCI6MTcxNzQ4NzQ3NiwiZXhwIjoxNzIwMDc5NDc2fQ.dJIN9WU-5Yzi8kBPinSG4EPpNvjicDdYtq92YAj3vPY",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:2000/api/customer/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"customer",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"rahul@yopmail.com\",\n    \"password\":\"12345678\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/customer/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "homepage",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWVjNjY2YmMxM2E1ODRlMzAxYzU4OSIsImlhdCI6MTcxNzQ4NzQ3NiwiZXhwIjoxNzIwMDc5NDc2fQ.dJIN9WU-5Yzi8kBPinSG4EPpNvjicDdYtq92YAj3vPY",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:2000/api/customer/homepage?search=iphone&categoryId=665ec3300a452b73d45825cc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"customer",
+								"homepage"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "iphone"
+								},
+								{
+									"key": "categoryId",
+									"value": "665ec3300a452b73d45825cc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single order",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWVjNjY2YmMxM2E1ODRlMzAxYzU4OSIsImlhdCI6MTcxNzQ4NzQ3NiwiZXhwIjoxNzIwMDc5NDc2fQ.dJIN9WU-5Yzi8kBPinSG4EPpNvjicDdYtq92YAj3vPY",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:2000/api/customer/order/665efe348686a05a01fe4802",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"customer",
+								"order",
+								"665efe348686a05a01fe4802"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWVjNjY2YmMxM2E1ODRlMzAxYzU4OSIsImlhdCI6MTcxNzQ4NzQ3NiwiZXhwIjoxNzIwMDc5NDc2fQ.dJIN9WU-5Yzi8kBPinSG4EPpNvjicDdYtq92YAj3vPY",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:2000/api/customer/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"customer",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tenant",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"tenant2@yopmail.com\",\n    \"password\":\"12345678\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/tenant/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"tenant",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWVjMmNmMGIwMzc0YmJkMTJmYTY0MSIsImlhdCI6MTcxNzQ4NjMzOSwiZXhwIjoxNzIwMDc4MzM5fQ.QpnuYrdTbhfquPSJ5AUy1zhRRVSQuh9lCaIX6oCJcXI",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Veg\"\n    \n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/tenant/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"tenant",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWVjMmNmMGIwMzc0YmJkMTJmYTY0MSIsImlhdCI6MTcxNzQ4NjMzOSwiZXhwIjoxNzIwMDc4MzM5fQ.QpnuYrdTbhfquPSJ5AUy1zhRRVSQuh9lCaIX6oCJcXI",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Cool Gadget\",\n  \"price\": 49.99,\n  \"inventoryCount\": 10,\n  \"category\": \"665ec3300a452b73d45825cc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/tenant/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"tenant",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order Request (accept/ reject)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWVjMmNmMGIwMzc0YmJkMTJmYTY0MSIsImlhdCI6MTcxNzQ4NjMzOSwiZXhwIjoxNzIwMDc4MzM5fQ.QpnuYrdTbhfquPSJ5AUy1zhRRVSQuh9lCaIX6oCJcXI",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"orderId\": \"665efe348686a05a01fe4802\",\n  \"status\": \"ACCEPTED\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/tenant/orderRequest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"tenant",
+								"orderRequest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWVjMmNmMGIwMzc0YmJkMTJmYTY0MSIsImlhdCI6MTcxNzQ4NjMzOSwiZXhwIjoxNzIwMDc4MzM5fQ.QpnuYrdTbhfquPSJ5AUy1zhRRVSQuh9lCaIX6oCJcXI",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:2000/api/tenant/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"tenant",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWVjMmNmMGIwMzc0YmJkMjJmYTc0MSIsImlhdCI6MTcxNzUwMjgxMywiZXhwIjoxNzIwMDk0ODEzfQ.SzCcEnI-x0qaJllofFQnWYc9kEL5oddY-KjMY1uCSYU",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:2000/api/tenant/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"tenant",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "StartDate",
+									"value": "2023-06-04 11:44:52.421Z",
+									"disabled": true
+								},
+								{
+									"key": "EndDate",
+									"value": "2025-06-04 11:44:52.421Z",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single order detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWVjMmNmMGIwMzc0YmJkMjJmYTc0MSIsImlhdCI6MTcxNzUwMjgxMywiZXhwIjoxNzIwMDk0ODEzfQ.SzCcEnI-x0qaJllofFQnWYc9kEL5oddY-KjMY1uCSYU",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:2000/api/tenant//orderDetails/665efe348686a05a01fe4802",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"tenant",
+								"",
+								"orderDetails",
+								"665efe348686a05a01fe4802"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
